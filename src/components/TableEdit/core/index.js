@@ -10,6 +10,16 @@ class YSheet extends Widget {
 	constructor(el, options) {
 		super(`${cssPrefix}`, 'div', true);
 	}
+
+	/**
+	 * destroy
+	 */
+	destroy() {
+		super.destroy();
+		this.xWork.destroy();
+		this.focusManage.destroy();
+		this.tabNameGen.clear();
+	}
 }
 
 export { YSheet };

@@ -20,6 +20,14 @@ class Widget extends Life {
 		}
 		this.$$rootFlag = $$rootFlag;
 	}
+
+	/**
+	 * 销毁组件
+	 */
+	destroy() {
+		// this.unbind();
+		// this.remove();
+	}
 }
 
 export { Widget };
