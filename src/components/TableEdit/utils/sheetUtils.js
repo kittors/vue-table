@@ -68,6 +68,19 @@ class SheetUtils {
 		return SheetUtils.type(obj) === DATA_TYPE.String;
 	}
 
+	//是否是数组
+	static isArray(e) {
+		return SheetUtils.type(e) === DATA_TYPE.Array;
+	}
+
+	//是否是一个普通对象 和空对象的原型一致就是普通对象 而不是特殊对象
+	static isPlainObject(obj) {
+		if (SheetUtils.isUnDef(obj)) {
+			return false;
+		}
+		return Object.getPrototypeOf(obj) === Object.getPrototypeOf({});
+	}
+
 	//用于判断参数的数据类型，给出其对应的数据类型映射
 	static type(arg) {
 		const type = Object.prototype.toString.call(arg);
@@ -111,6 +124,35 @@ class SheetUtils {
 		// eslint-disable-next-line no-restricted-globals
 		const type = SheetUtils.type(self);
 		return type === DATA_TYPE.DedicatedWorkerGlobalScope;
+	}
+
+	//复制对象的属性
+	static copy(object = {}, ...sources) {
+		if (SheetUtils.isUnDef(object)) {
+			return {};
+		}
+		if (SheetUtils.isUnDef(sources) || sources.length === 0) {
+			return object;
+		}
+		sources.forEach(source => {
+			if (SheetUtils.isUnDef(source)) return;
+			Object.keys(source).forEach(key => {
+				const v = source[key];
+				if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
+					object[key] = v;
+				} else if (
+					typeof v !== 'function' &&
+					!Array.isArray(v) &&
+					SheetUtils.isPlainObject(v)
+				) {
+					object[key] = object[key] || {};
+					SheetUtils.copy(object[key], v);
+				} else if (v) {
+					object[key] = v;
+				}
+			});
+		});
+		return object;
 	}
 }
 

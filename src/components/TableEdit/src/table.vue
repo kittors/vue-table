@@ -9,7 +9,7 @@ const sheet = ref(null);
 
 onMounted(() => {
 	const options = {};
-	new YSheet(sheet, options);
+	new YSheet(sheet.value, options);
 });
 </script>
 
