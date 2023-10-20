@@ -1,6 +1,6 @@
 import { Constant } from '../const/Constant';
 import { SheetUtils } from '../utils/sheetUtils';
-import { h } from '../lib/Element';
+import { h, Element } from '../lib/Element';
 import { XEvent } from './XEvent';
 
 class WidgetFocusMange {

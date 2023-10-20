@@ -19,6 +19,19 @@ class Element {
 	}
 
 	/**
+	 * 数据绑定
+	 * @param key
+	 * @param value
+	 * @returns {Element|*}
+	 */
+	data(key, value) {
+		if (value !== undefined) {
+			this.map[key] = value;
+			return this;
+		}
+		return this.map[key];
+	}
+	/**
 	 * 包装元素
 	 */
 	static wrapElement(object) {
@@ -75,7 +88,6 @@ class Element {
 	 * @returns {string}
 	 */
 	tagName() {
-		console.log(this.el);
 		return this.el.nodeName.toLocaleLowerCase();
 	}
 

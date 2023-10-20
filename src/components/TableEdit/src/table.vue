@@ -1,5 +1,5 @@
 <template>
-	<div ref="sheet"></div>
+	<div ref="sheet" class="sheet-contaniner"></div>
 </template>
 
 <script setup lang="ts">

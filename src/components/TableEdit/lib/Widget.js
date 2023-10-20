@@ -22,6 +22,28 @@ class Widget extends Life {
 	}
 
 	/**
+	 * 追加节点
+	 * 触发onAttach事件
+	 * @param widget
+	 */
+	attach(widget) {
+		this.childrenNodes(widget);
+		widget.parentWidget(this);
+		widget.onAttach(this);
+	}
+
+	/**
+	 * 获取 root widget  获取最根部的widget
+	 */
+	getRootWidget() {
+		let parent = this.data('parent');
+		while (parent && !parent.$$rootFlag) {
+			parent = parent.data('parent');
+		}
+		return parent;
+	}
+
+	/**
 	 * 销毁组件
 	 */
 	destroy() {
