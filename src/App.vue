@@ -1,11 +1,13 @@
 <template>
 	<div class="main">
-		<TableEidt></TableEidt>
+		<!-- <TableEidt></TableEidt> -->
+		<TableDemo></TableDemo>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { TableEidt } from '@/components/TableEdit';
+import { TableDemo } from '@/components/TableDemo';
+// import { TableEidt } from '@/components/TableEdit';
 </script>
 
 <style scoped lang="less"></style>
