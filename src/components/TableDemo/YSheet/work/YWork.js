@@ -1,6 +1,7 @@
 import { Widget } from '../lib/Widget';
 import { cssPrefix } from '../constant';
 import { copy } from '../utils/sheetUtils';
+import { YWorkBody } from './body/YWorkBody';
 
 //workconfig默认配置
 const settings = {
@@ -31,6 +32,10 @@ class YWork extends Widget {
 		super(`${cssPrefix}-work`);
 		this.options = copy({}, settings, options);
 		//组件
+		this.body = new YWorkBody(this, this.options.body);
+	}
+	onAttach() {
+		console.log(2)
 	}
 }
 
