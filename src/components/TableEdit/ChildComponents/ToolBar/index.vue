@@ -1,7 +1,5 @@
 <template>
-	<div class="main">
-		<router-view></router-view>
-	</div>
+	<div class="tool-bar"></div>
 </template>
 
 <script setup lang="ts"></script>

@@ -31,7 +31,7 @@
 		"src/**/*.vue",
 		"src/components/TableEdit/src/table.vue",
 		"src/draw/YDraw.js",
-		"src/components/TableEdit/index.js"
+		"src/components/TableEdit/index.ts"
 		],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }
