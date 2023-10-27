@@ -5,8 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import TableEdit from '@/components/TableEdit';
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.container {
+	height: 100vh;
+	width: 100vw;
+}
+</style>
